@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://1g46plwxywcv"]
+
+[ext_resource type="Script" uid="uid://c1b1xl5ymyyvt" path="res://scene/main/Credits/credits.gd" id="1_rvhtk"]
+[ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/Matcha Mint.ttf" id="2_o2f0w"]
+[ext_resource type="AudioStream" uid="uid://bluaokvs6mhp5" path="res://audio/farran_ez-soft-indie-guitar-sample-456142.mp3" id="3_rgyns"]
+[ext_resource type="AudioStream" uid="uid://dek6x1acg51p8" path="res://audio/freesound_community-button-pressed-38129.mp3" id="4_kkuax"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0muab"]
+load_path = "res://.godot/imported/MOUNTAIN.jpg-b8b232a7b705f67c9a4ae92db5924fb9.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opsyb"]
+texture = SubResource("CompressedTexture2D_0muab")
+modulate_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
+
+[sub_resource type="Animation" id="Animation_nv4y5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/VBoxContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/VBoxContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1100, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0muab"]
+resource_name = "credit_scroll"
+length = 30.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/VBoxContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -5, 0, 0, 0),
+"times": PackedFloat32Array(0, 30)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/VBoxContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(700, -0.25, 0, 0.25, 0, -1100, -5, 300, 0, 0),
+"times": PackedFloat32Array(0, 30)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nv4y5"]
+_data = {
+&"RESET": SubResource("Animation_nv4y5"),
+&"credit_scroll": SubResource("Animation_0muab")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0muab"]
+bg_color = Color(0, 0.96862745, 0.2784314, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0.1882353, 0, 0.36862746)
+shadow_size = 5
+shadow_offset = Vector2(10, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nv4y5"]
+bg_color = Color(0.6, 1, 0.6, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0.70980394, 0.07058824, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(10, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4274"]
+bg_color = Color(0, 0.28235295, 0.101960786, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.36862746)
+shadow_size = 5
+shadow_offset = Vector2(10, 5)
+
+[node name="Credits" type="Control" unique_id=1424717927]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rvhtk")
+
+[node name="Panel" type="Panel" parent="." unique_id=32368165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_opsyb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1551027959]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1100.0
+offset_bottom = -646.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer" unique_id=1768714553]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o2f0w")
+theme_override_font_sizes/font_size = 40
+text = "Credits
+NATURE SPIRIT"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=277869138]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o2f0w")
+text = "
+DIREKSI & DESAIN
+Game Designer
+•	Dinda
+•	Raihan
+
+PEMROGRAMAN
+Gameplay & System Programmer
+•	Raihan
+•	Dinda
+
+ARTISTIK & VISUAL
+3D Character & Environment Artist
+•	Lareina
+•	Dinda
+•	Aura
+
+UI/UX Designer
+•	Raihan
+
+Audio
+•	Lareina
+•	Aura
+
+KONTRIBUSI ASET PIHAK KETIGA
+Asset 3D & Lingkungan
+….
+
+Audio & Musik
+•	Ikoliks_aj-background-music-30427 – ( pixabay.com )
+•	creatorshome-digital-click-357350 – ( pixabay.com )
+•	farran_ez-soft-indie-guitar-sample-456142 – ( pixabay.com )
+
+TERIMA KASIH KHUSUS
+Guru Pembimbing
+Pak Maul
+
+SMKN 21 JAKARTA
+Komunitas Godot Engine Indonesia
+
+"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1306850303]
+libraries/ = SubResource("AnimationLibrary_nv4y5")
+
+[node name="Button" type="Button" parent="." unique_id=989235632]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o2f0w")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0muab")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nv4y5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4274")
+text = "Back"
+
+[node name="Backsound" type="AudioStreamPlayer" parent="." unique_id=1704912031]
+stream = ExtResource("3_rgyns")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="." unique_id=1419013017]
+stream = ExtResource("4_kkuax")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
