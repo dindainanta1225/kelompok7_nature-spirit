@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://x4dbea1iwct6" path="res://scene/main/mainmenu/main_menu.gd" id="1_vi4xp"]
 [ext_resource type="Texture2D" uid="uid://b5g5hd0jsgva0" path="res://assets/MOUNTAIN.jpg" id="2_0e8gt"]
-[ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/Matcha Mint.ttf" id="3_wwfgg"]
-[ext_resource type="AudioStream" uid="uid://b5usdbyg4k5w3" path="res://audio/ikoliks_aj-background-music-320427.mp3" id="4_tdapq"]
-[ext_resource type="AudioStream" uid="uid://dek6x1acg51p8" path="res://audio/freesound_community-button-pressed-38129.mp3" id="5_5hl0s"]
+[ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/fonts/Matcha Mint.ttf" id="3_wwfgg"]
+[ext_resource type="AudioStream" uid="uid://b5usdbyg4k5w3" path="res://audio/music/ikoliks_aj-background-music-320427.mp3" id="4_tdapq"]
+[ext_resource type="AudioStream" uid="uid://dek6x1acg51p8" path="res://audio/sfx/freesound_community-button-pressed-38129.mp3" id="5_5hl0s"]
+[ext_resource type="Script" uid="uid://ysugtx0lntcp" path="res://scene/main/mainmenu/options.gd" id="6_mfh8a"]
 [ext_resource type="Script" uid="uid://c7osx2rvc7oj3" path="res://scene/main/mainmenu/fullscreen_control.gd" id="6_n2xt1"]
+[ext_resource type="Script" uid="uid://dmd60rs7gnl30" path="res://scene/main/mainmenu/menu_fx.gd" id="7_2edhf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opsyb"]
 texture = ExtResource("2_0e8gt")
@@ -159,6 +161,7 @@ stream = ExtResource("5_5hl0s")
 bus = &"SFX"
 
 [node name="Options" type="Panel" parent="." unique_id=527387867]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -172,6 +175,7 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n4g15")
+script = ExtResource("6_mfh8a")
 
 [node name="Title" type="Label" parent="Options" unique_id=450063455]
 layout_mode = 1
@@ -297,6 +301,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_opsyb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2fwvj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ajujj")
 text = "Back"
+
+[node name="MenuFX" type="Control" parent="." unique_id=1497525905]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_2edhf")
 
 [connection signal="pressed" from="MainButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Options" to="." method="_on_options_pressed"]

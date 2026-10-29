@@ -2,10 +2,17 @@ extends HSlider
 
 @export var audio_bus_name: String
 
-var audio_bus_id
+var audio_bus_id: int
 
-func _ready():
+func _ready() -> void:
 	audio_bus_id = AudioServer.get_bus_index(audio_bus_name)
+
+	value = db_to_linear(
+		AudioServer.get_bus_volume_db(audio_bus_id)
+	)
+
+	value_changed.connect(_on_value_changed)
+
 
 func _on_value_changed(value: float) -> void:
 	var db = linear_to_db(value)

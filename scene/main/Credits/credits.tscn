@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://1g46plwxywcv"]
 
-[ext_resource type="Script" uid="uid://c1b1xl5ymyyvt" path="res://scene/main/Credits/credits.gd" id="1_rvhtk"]
-[ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/Matcha Mint.ttf" id="2_o2f0w"]
-[ext_resource type="AudioStream" uid="uid://bluaokvs6mhp5" path="res://audio/farran_ez-soft-indie-guitar-sample-456142.mp3" id="3_rgyns"]
-[ext_resource type="AudioStream" uid="uid://dek6x1acg51p8" path="res://audio/freesound_community-button-pressed-38129.mp3" id="4_kkuax"]
+[ext_resource type="Script" uid="uid://c1b1xl5ymyyvt" path="res://scene/main/credits/credits.gd" id="1_rvhtk"]
+[ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/fonts/Matcha Mint.ttf" id="2_o2f0w"]
+[ext_resource type="AudioStream" uid="uid://bluaokvs6mhp5" path="res://audio/music/farran_ez-soft-indie-guitar-sample-456142.mp3" id="3_rgyns"]
+[ext_resource type="AudioStream" uid="uid://dek6x1acg51p8" path="res://audio/sfx/freesound_community-button-pressed-38129.mp3" id="4_kkuax"]
+[ext_resource type="Script" uid="uid://dqh10ncic3wvp" path="res://scene/main/credits/menu_fx.gd" id="5_0mucg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0muab"]
 load_path = "res://.godot/imported/MOUNTAIN.jpg-b8b232a7b705f67c9a4ae92db5924fb9.ctex"
@@ -205,5 +206,12 @@ parameters/looping = true
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="." unique_id=1419013017]
 stream = ExtResource("4_kkuax")
+
+[node name="MenuFX" type="Control" parent="." unique_id=1253558111]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_0mucg")
+ambient_only = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

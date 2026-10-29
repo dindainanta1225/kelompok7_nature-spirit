@@ -19,25 +19,26 @@ func _ready() -> void:
 		AudioServer.get_bus_volume_db(
 			AudioServer.get_bus_index("Master")
 		)
-	) * 100
+	) * 100.0
 
 	music_volume.value = db_to_linear(
 		AudioServer.get_bus_volume_db(
 			AudioServer.get_bus_index("Music")
 		)
-	) * 80
+	) * 100.0
 
 	sfx_volume.value = db_to_linear(
 		AudioServer.get_bus_volume_db(
 			AudioServer.get_bus_index("SFX")
 		)
-	) * 80
+	) * 100.0
 
 	# Cek kondisi fullscreen
 	fullscreen_control.button_pressed = (
 		DisplayServer.window_get_mode()
 		== DisplayServer.WINDOW_MODE_FULLSCREEN
 	)
+
 
 func play_button_sound() -> void:
 	button_sound.play()
@@ -50,7 +51,9 @@ func play_button_sound() -> void:
 func _on_start_pressed() -> void:
 	play_button_sound()
 	await get_tree().create_timer(0.15).timeout
-	get_tree().change_scene_to_file("res://scene/world/farm/farm.tscn")
+	get_tree().change_scene_to_file(
+		"res://scene/world/farm/farm.tscn"
+	)
 
 
 func _on_options_pressed() -> void:
@@ -62,7 +65,9 @@ func _on_options_pressed() -> void:
 func _on_credit_pressed() -> void:
 	play_button_sound()
 	await get_tree().create_timer(0.15).timeout
-	get_tree().change_scene_to_file("res://scene/main/Credits/credits.tscn")
+	get_tree().change_scene_to_file(
+		"res://scene/main/credits/credits.tscn"
+	)
 
 
 func _on_exit_pressed() -> void:
@@ -82,22 +87,35 @@ func _on_back_options_pressed() -> void:
 # =========================
 
 func _on_master_volume_value_changed(value: float) -> void:
-	var bus = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus, linear_to_db(value / 100.0))
+	var bus := AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(
+		bus,
+		linear_to_db(value / 100.0)
+	)
 
 
 func _on_music_volume_value_changed(value: float) -> void:
-	var bus = AudioServer.get_bus_index("Music")
-	AudioServer.set_bus_volume_db(bus, linear_to_db(value / 100.0))
+	var bus := AudioServer.get_bus_index("Music")
+	AudioServer.set_bus_volume_db(
+		bus,
+		linear_to_db(value / 100.0)
+	)
 
 
 func _on_sfx_volume_value_changed(value: float) -> void:
-	var bus = AudioServer.get_bus_index("SFX")
-	AudioServer.set_bus_volume_db(bus, linear_to_db(value / 100.0))
+	var bus := AudioServer.get_bus_index("SFX")
+	AudioServer.set_bus_volume_db(
+		bus,
+		linear_to_db(value / 100.0)
+	)
 
 
 func _on_fullscreen_control_toggled(button_pressed: bool) -> void:
 	if button_pressed:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_mode(
+			DisplayServer.WINDOW_MODE_FULLSCREEN
+		)
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_mode(
+			DisplayServer.WINDOW_MODE_WINDOWED
+		)

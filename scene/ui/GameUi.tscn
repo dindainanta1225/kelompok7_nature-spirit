@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://8x1ts7wxn6u7"]
+
+[ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/fonts/Matcha Mint.ttf" id="1_y2qkg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7etj"]
+bg_color = Color(0.8416304, 0.59917206, 0.3038315, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4g15"]
+bg_color = Color(0.8117647, 0.57254905, 0.2784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="GameUi" type="CanvasLayer" unique_id=490973650]
+
+[node name="HUD" type="Control" parent="." unique_id=1483067527]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DayPanel" type="Panel" parent="HUD" unique_id=1067807760]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 90.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="HUD/DayPanel" unique_id=1221787476]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_y2qkg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_g7etj")
+text = "Day 1 Sunday"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimePanel" type="Panel" parent="HUD" unique_id=1494953051]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 89.0
+offset_right = -20.0
+offset_bottom = 159.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="HUD/TimePanel" unique_id=108563232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_y2qkg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_n4g15")
+text = "08:00"
+horizontal_alignment = 1
+vertical_alignment = 1

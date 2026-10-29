@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nsqx316b352x"]
 
-[ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/Matcha Mint.ttf" id="2_p6prb"]
+[ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/fonts/Matcha Mint.ttf" id="2_p6prb"]
 [ext_resource type="PackedScene" uid="uid://b6g487cakkcta" path="res://scene/player/player.tscn" id="3_ald61"]
 [ext_resource type="MeshLibrary" uid="uid://bobmie6x1c0ea" path="res://assets/Models/Land.meshlib" id="3_jgj5v"]
 [ext_resource type="MeshLibrary" uid="uid://3e0vxt8btsaf" path="res://assets/Models/decor.meshlib" id="4_jgj5v"]
