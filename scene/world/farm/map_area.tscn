@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://11fbu1d5i6g2"]
+
+[ext_resource type="PackedScene" uid="uid://jn2dwontjmtf" path="res://rehan/assets/IsiMap/model (8).glb" id="1_1jocj"]
+[ext_resource type="PackedScene" uid="uid://cfigswei6qgv2" path="res://rehan/assets/IsiMap/model (5).glb" id="2_5abi1"]
+[ext_resource type="PackedScene" uid="uid://ca7h6j4ufqp4n" path="res://rehan/assets/IsiMap/model (11).glb" id="3_ud1n1"]
+[ext_resource type="PackedScene" uid="uid://c5dljqwik7451" path="res://rehan/assets/IsiMap/model (17).glb" id="4_w3dyv"]
+[ext_resource type="PackedScene" uid="uid://c7xjpbb8omq16" path="res://OpenBarn.fbx" id="5_0fusn"]
+[ext_resource type="PackedScene" uid="uid://daqovfau0lixa" path="res://Fence2 - Salin.fbx" id="6_qlywr"]
+[ext_resource type="PackedScene" uid="uid://ccitu1mpjka4w" path="res://rehan/assets/IsiMap/model (18).glb" id="7_uw1cd"]
+[ext_resource type="PackedScene" uid="uid://xjpfvc7ccw0d" path="res://rehan/assets/IsiMap/model (19).glb" id="8_w3cpk"]
+[ext_resource type="PackedScene" uid="uid://3w1xkotsxfje" path="res://rehan/assets/IsiMap/model (20).glb" id="9_kpqvn"]
+[ext_resource type="PackedScene" uid="uid://s8g04ktgq5ju" path="res://rehan/assets/IsiMap/model (21).glb" id="10_qy3ud"]
+[ext_resource type="PackedScene" uid="uid://cdoldr7ntoaec" path="res://rehan/assets/IsiMap/model (22).glb" id="11_ed0ap"]
+[ext_resource type="PackedScene" uid="uid://c701qya55bl6r" path="res://rehan/assets/IsiMap/house.tscn" id="12_pv3oe"]
+[ext_resource type="PackedScene" uid="uid://b7q7sw8ttesuq" path="res://rehan/assets/IsiMap/model (16).glb" id="13_pb1sg"]
+[ext_resource type="PackedScene" uid="uid://cc4tpnc03dtvm" path="res://rehan/assets/IsiMap/model (25).glb" id="14_cxelk"]
+[ext_resource type="PackedScene" uid="uid://y2g5r3qdudl5" path="res://rehan/assets/IsiMap/model (26).glb" id="15_d5xtr"]
+[ext_resource type="PackedScene" uid="uid://tgyy0fn6ncrb" path="res://rehan/assets/IsiMap/model (27).glb" id="16_b60lo"]
+[ext_resource type="PackedScene" uid="uid://diewmlwbyxx2r" path="res://rehan/assets/IsiMap/model (28).glb" id="17_s3oye"]
+[ext_resource type="PackedScene" uid="uid://y0cnj57pfix7" path="res://rehan/assets/IsiMap/model (29).glb" id="18_g83bf"]
+[ext_resource type="PackedScene" uid="uid://ownnvps2j3xp" path="res://rehan/assets/IsiMap/model (30).glb" id="19_qj368"]
+[ext_resource type="PackedScene" uid="uid://b3i38uet27smo" path="res://rehan/assets/IsiMap/model (31).glb" id="20_cepua"]
+[ext_resource type="PackedScene" uid="uid://njd4df0s1d8n" path="res://rehan/assets/IsiMap/model (32).glb" id="21_u1h1d"]
+[ext_resource type="PackedScene" uid="uid://sgl8kaq0rfpp" path="res://rehan/assets/IsiMap/model (34).glb" id="22_0aa4k"]
+[ext_resource type="PackedScene" uid="uid://c72eb0nsvjud0" path="res://rehan/assets/IsiMap/model (35).glb" id="23_7kr30"]
+[ext_resource type="PackedScene" uid="uid://d0fmbkhba1nlj" path="res://rehan/assets/IsiMap/model (36).glb" id="24_77850"]
+[ext_resource type="PackedScene" uid="uid://cnm4dnlf23iit" path="res://rehan/assets/IsiMap/model (38).glb" id="25_jpbbe"]
+[ext_resource type="PackedScene" uid="uid://cso1bwqcyghg6" path="res://rehan/assets/IsiMap/model (39).glb" id="26_0wb0a"]
+[ext_resource type="PackedScene" uid="uid://cpfwd14dqldas" path="res://rehan/assets/IsiMap/model (40).glb" id="27_dhrsm"]
+[ext_resource type="PackedScene" uid="uid://csi6hsk8buvta" path="res://rehan/assets/IsiMap/model (41).glb" id="28_y6c5r"]
+[ext_resource type="PackedScene" uid="uid://byouaj4st2fjb" path="res://rehan/assets/IsiMap/model (42).glb" id="29_tggjl"]
+[ext_resource type="PackedScene" uid="uid://dh340oicg44xs" path="res://rehan/assets/IsiMap/model (46).glb" id="30_0oqbx"]
+[ext_resource type="PackedScene" uid="uid://dirdclnqokrbf" path="res://rehan/assets/IsiMap/model (47).glb" id="31_hvjkn"]
+[ext_resource type="PackedScene" uid="uid://kawr1eh7k6u4" path="res://rehan/assets/IsiMap/model (48).glb" id="32_ai55a"]
+[ext_resource type="PackedScene" uid="uid://xdadegh4mp6n" path="res://rehan/assets/IsiMap/model (55).glb" id="33_jmibg"]
+[ext_resource type="PackedScene" uid="uid://54f662sy7xmr" path="res://rehan/assets/IsiMap/model (58).glb" id="34_ggv4e"]
+
+[node name="MapArea" type="Node3D" unique_id=744011545]
+
+[node name="danau" parent="." unique_id=529123547 instance=ExtResource("1_1jocj")]
+transform = Transform3D(-0.41469324, 0, 0.9099613, 0, 1, 0, -0.9099613, 0, -0.41469324, -9.418, 1.5, 14)
+
+[node name="duduk" parent="." unique_id=2005115546 instance=ExtResource("2_5abi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 1.503, 4.2)
+
+[node name="duduk3" parent="." unique_id=987629793 instance=ExtResource("2_5abi1")]
+transform = Transform3D(-0.9998157, 0, -0.01919739, 0, 1, 0, 0.01919739, 0, -0.9998157, 0.01, 1.503, -1.2)
+
+[node name="duduk2" parent="." unique_id=1544578492 instance=ExtResource("2_5abi1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.5, 1.503, 2)
+
+[node name="duduk4" parent="." unique_id=62402533 instance=ExtResource("2_5abi1")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 2.6, 1.503, 1.5)
+
+[node name="airmancur" parent="." unique_id=106167534 instance=ExtResource("3_ud1n1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5083594, 1.4501543)
+
+[node name="AuxScene" parent="." unique_id=1120017818 instance=ExtResource("4_w3dyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, -10)
+
+[node name="AuxScene2" parent="." unique_id=1648523245 instance=ExtResource("4_w3dyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -10)
+
+[node name="AuxScene3" parent="." unique_id=1369100826 instance=ExtResource("4_w3dyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, 11)
+
+[node name="AuxScene4" parent="." unique_id=472850187 instance=ExtResource("4_w3dyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 11)
+
+[node name="OpenBarn" parent="." unique_id=1245378794 instance=ExtResource("5_0fusn")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -15, 1.5, -9.6)
+
+[node name="Fence2 - Salin2" parent="." unique_id=244422608 instance=ExtResource("6_qlywr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.3, 1.5, 3.5109138)
+
+[node name="Fence2 - Salin3" parent="." unique_id=1894783276 instance=ExtResource("6_qlywr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.3, 1.5, -2.4010038)
+
+[node name="Fence2 - Salin4" parent="." unique_id=1882292090 instance=ExtResource("6_qlywr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.6, 1.5, 3.5109138)
+
+[node name="Fence2 - Salin5" parent="." unique_id=417314505 instance=ExtResource("6_qlywr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.6, 1.5, -2.4010038)
+
+[node name="Fence2 - Salin6" parent="." unique_id=862640122 instance=ExtResource("6_qlywr")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14.5, 1.5, 6.4)
+
+[node name="AuxScene5" parent="." unique_id=426601494 instance=ExtResource("7_uw1cd")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -10, 1.5, -10)
+
+[node name="AuxScene6" parent="." unique_id=630883756 instance=ExtResource("8_w3cpk")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.5, 1.5, 1)
+
+[node name="AuxScene7" parent="." unique_id=971906579 instance=ExtResource("9_kpqvn")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -12.3, 1.5, -8)
+
+[node name="AuxScene8" parent="." unique_id=1224927133 instance=ExtResource("10_qy3ud")]
+transform = Transform3D(0.68470335, 0, -0.14553818, 0, 0.7, 0, 0.14553818, 0, 0.68470335, -11, 1.5, -8.5)
+
+[node name="AuxScene9" parent="." unique_id=1303749394 instance=ExtResource("11_ed0ap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.5, -10)
+
+[node name="House" parent="." unique_id=1481222172 instance=ExtResource("12_pv3oe")]
+transform = Transform3D(0.8, 0, 1.3987645e-07, 0, 0.8, 0, -1.3987645e-07, 0, 0.8, 2.5240622e-06, 1.5, 8.800001)
+
+[node name="npc2" parent="." unique_id=323539347 instance=ExtResource("13_pb1sg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, 1.5, 15)
+
+[node name="AuxScene10" parent="." unique_id=2127580203 instance=ExtResource("14_cxelk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.5, -10)
+
+[node name="AuxScene11" parent="." unique_id=1916657684 instance=ExtResource("15_d5xtr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, 1)
+
+[node name="AuxScene12" parent="." unique_id=1730068351 instance=ExtResource("16_b60lo")]
+
+[node name="AuxScene13" parent="." unique_id=237351697 instance=ExtResource("17_s3oye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 5)
+
+[node name="AuxScene14" parent="." unique_id=1444771506 instance=ExtResource("18_g83bf")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -15, 1.7, -11.4)
+
+[node name="AuxScene15" parent="." unique_id=1603617786 instance=ExtResource("19_qj368")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.7, -11)
+
+[node name="AuxScene16" parent="." unique_id=1170716143 instance=ExtResource("20_cepua")]
+transform = Transform3D(10, 0, 0, 0, 9.659258, 2.5881906, 0, -2.5881906, 9.659258, -7.7, 1.5, -9)
+
+[node name="AuxScene17" parent="." unique_id=109755698 instance=ExtResource("21_u1h1d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.1, 1.5, 5.5)
+
+[node name="AuxScene19" parent="." unique_id=2128874860 instance=ExtResource("22_0aa4k")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -12, 1.5, 9.5)
+
+[node name="AuxScene22" parent="." unique_id=1864289696 instance=ExtResource("22_0aa4k")]
+transform = Transform3D(0.96592575, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.96592575, -9.3, 1.5, 9.1)
+
+[node name="AuxScene23" parent="." unique_id=836427179 instance=ExtResource("22_0aa4k")]
+transform = Transform3D(-0.88458085, 0, 0.46638656, 0, 1, 0, -0.46638656, 0, -0.88458085, -6.9, 1.5, 9.776)
+
+[node name="AuxScene20" parent="." unique_id=1876819841 instance=ExtResource("23_7kr30")]
+transform = Transform3D(-2.6226832e-08, 0, 0.59999996, 0, 0.59999996, 0, -0.59999996, 0, -2.6226832e-08, -15, 1.5, 12)
+
+[node name="AuxScene21" parent="." unique_id=1487329777 instance=ExtResource("24_77850")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.5, 1.6, -2)
+
+[node name="AuxScene25" parent="." unique_id=889669689 instance=ExtResource("25_jpbbe")]
+transform = Transform3D(0.8415108, 0, -0.5402403, 0, 1, 0, 0.5402403, 0, 0.8415108, -14, 1.6, 9)
+
+[node name="AuxScene30" parent="." unique_id=252389176 instance=ExtResource("25_jpbbe")]
+transform = Transform3D(0.99880606, 0, 0.048849765, 0, 1, 0, -0.048849765, 0, 0.99880606, -16.174414, 1.6, 9.759836)
+
+[node name="AuxScene26" parent="." unique_id=969365163 instance=ExtResource("26_0wb0a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.4, 1.7, -10)
+
+[node name="AuxScene27" parent="." unique_id=1699439699 instance=ExtResource("27_dhrsm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.5, 2.4)
+
+[node name="AuxScene28" parent="." unique_id=1811458519 instance=ExtResource("28_y6c5r")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -13.3, 1.6, -10.7)
+
+[node name="AuxScene29" parent="." unique_id=1531037369 instance=ExtResource("29_tggjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 1.5, -10.6)
+
+[node name="AuxScene33" parent="." unique_id=1440879152 instance=ExtResource("30_0oqbx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.9, 1.5, -4.6)
+
+[node name="AuxScene34" parent="." unique_id=981994623 instance=ExtResource("31_hvjkn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, -10)
+
+[node name="AuxScene35" parent="." unique_id=933394696 instance=ExtResource("32_ai55a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.6, -14)
+
+[node name="AuxScene18" parent="." unique_id=423535427 instance=ExtResource("33_jmibg")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.0000014, 1.5, -11.999999)
+
+[node name="AuxScene24" parent="." unique_id=1023677606 instance=ExtResource("34_ggv4e")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12, 1.5, -2)
