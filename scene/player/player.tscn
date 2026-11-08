@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://be6gteerve82j" path="res://scene/player/player.gd" id="1_v7pse"]
 
+[ext_resource type="Script" uid="uid://cedfbx3w3if43" path="res://scene/camera/camera_controller.gd" id="2_cam"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yn74t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g7etj"]
@@ -18,6 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_g7etj")
 
 [node name="CameraController" type="Node3D" parent="." unique_id=2120646834]
+script = ExtResource("2_cam")
 
 [node name="Camera3D" type="Camera3D" parent="CameraController" unique_id=1757390247]
 transform = Transform3D(0.88778144, -0.19559072, 0.41663915, -0.011100514, 0.8958536, 0.44421056, -0.46013123, -0.39898682, 0.7931511, 2.4510841, 4.221861, 3.9597378)

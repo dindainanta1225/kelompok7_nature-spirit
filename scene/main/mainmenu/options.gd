@@ -1,5 +1,6 @@
 extends Control
-## OptionsFX - mempercantik panel Settings tanpa mengubah node atau script yang sudah ada.
+## OptionsFX (tema papan kayu) - mempercantik panel Settings tanpa mengubah node atau script lain.
+## Gaya sama dengan HUD dan menu Pause: papan kayu coklat, daun hijau, tombol kayu.
 ##
 ## PASANG:
 ##  1. Di main_menu.tscn, klik node "Options" (panel Settings), lalu Attach Script > Load
@@ -10,13 +11,17 @@ extends Control
 ## Setiap bagian bisa dimatikan di Inspector.
  
 @export_group("Warna")
-@export var panel_color := Color(0.06, 0.14, 0.10, 0.95)
-@export var border_color := Color(0.0, 0.95, 0.33)
-@export var accent_color := Color(0.0, 0.95, 0.33)       # samakan dengan warna tombol hijau-mu
-@export var track_color := Color(0.02, 0.07, 0.05, 1.0)
+@export var wood_color := Color(0.40, 0.25, 0.13)
+@export var accent_color := Color(0.40, 0.74, 0.32)      # hijau daun (slider, toggle)
+@export var track_color := Color(0.10, 0.05, 0.03, 1.0)
+@export var text_color := Color(1.0, 0.94, 0.78)         # krem
+@export var heading_color := Color(1.0, 0.84, 0.30)      # emas, untuk judul bagian
+@export var leaves := true                               # daun hijau di sudut panel
  
 @export_group("Aktifkan")
 @export var style_panel := true
+@export var style_texts := true         # warna teks krem + garis tepi
+@export var style_buttons := true       # tombol Back jadi papan kayu, hover hijau
 @export var style_sliders := true
 @export var value_labels := true        # angka persen di kanan slider
 @export var style_toggles := true       # toggle Fullscreen jadi bentuk pil hijau
@@ -28,6 +33,8 @@ extends Control
 @export_group("Suara (opsional)")
 @export var tick_sound: AudioStreamPlayer   # bunyi kecil saat slider digeser
  
+const WoodPanel := preload("res://scripts/managers/wood_panel.gd")
+
 var _value_labels: Dictionary = {}
 var _open_tween: Tween
 var _dimmer: ColorRect
@@ -39,6 +46,10 @@ var _last_tick := 0.0
 func _ready() -> void:
 	if style_panel:
 		_style_panel()
+	if style_texts:
+		_style_texts()
+	if style_buttons:
+		_style_buttons()
 	if style_sliders:
 		_style_sliders()
 	if style_toggles:
@@ -64,25 +75,68 @@ func _ready() -> void:
 # ------------------------------------------------------------------ panel
  
 func _style_panel() -> void:
-	var sb := StyleBoxFlat.new()
-	sb.bg_color = panel_color
-	sb.set_border_width_all(4)
-	sb.border_color = border_color
-	sb.set_corner_radius_all(22)
-	sb.shadow_color = Color(0, 0, 0, 0.5)
-	sb.shadow_size = 14
-	sb.shadow_offset = Vector2(0, 6)
+	var empty := StyleBoxEmpty.new()
 	if is_class("Panel") or is_class("PanelContainer"):
-		add_theme_stylebox_override("panel", sb)
-	else:
-		var p := Panel.new()
-		p.add_theme_stylebox_override("panel", sb)
-		p.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		p.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		add_child(p)
-		move_child(p, 0)
- 
- 
+		add_theme_stylebox_override("panel", empty)       # sembunyikan kotak abu-abu bawaan
+	var wp := WoodPanel.new()
+	wp.wood = wood_color
+	wp.seed_value = 5
+	wp.leaves = leaves
+	wp.margin = 0
+	wp.corner_radius = 16
+	wp.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	wp.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(wp)
+	move_child(wp, 0)
+
+
+func _outline(c: Control, size_px: int) -> void:
+	c.add_theme_color_override("font_outline_color", Color(0.14, 0.07, 0.03))
+	c.add_theme_constant_override("outline_size", maxi(4, size_px / 5))
+
+
+func _style_texts() -> void:
+	for n in find_children("*", "Label", true, false):
+		var l := n as Label
+		if l.name == "ValueLabel":
+			continue
+		var is_heading := l.name in ["Title", "AudioLabel", "DisplayLabel"]
+		l.add_theme_color_override("font_color", heading_color if is_heading else text_color)
+		_outline(l, l.get_theme_font_size("font_size"))
+	for n in find_children("*", "CheckButton", true, false):
+		for c in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color", "font_hover_pressed_color"]:
+			(n as Control).add_theme_color_override(c, text_color)
+		_outline(n as Control, 20)
+
+
+func _btn_box(fill: Color) -> StyleBoxFlat:
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = fill
+	sb.set_border_width_all(3)
+	sb.border_color = Color(0.16, 0.08, 0.04)
+	sb.set_corner_radius_all(10)
+	sb.shadow_color = Color(0, 0, 0, 0.35)
+	sb.shadow_size = 3
+	sb.shadow_offset = Vector2(0, 3)
+	sb.content_margin_top = 8.0
+	sb.content_margin_bottom = 8.0
+	return sb
+
+
+func _style_buttons() -> void:
+	for n in find_children("*", "Button", true, false):
+		if n is CheckBox or n is CheckButton:
+			continue
+		var b := n as Button
+		for c in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
+			b.add_theme_color_override(c, text_color)
+		_outline(b, 30)
+		b.add_theme_stylebox_override("normal", _btn_box(Color(0.56, 0.36, 0.18)))
+		b.add_theme_stylebox_override("hover", _btn_box(Color(0.34, 0.62, 0.30)))
+		b.add_theme_stylebox_override("pressed", _btn_box(Color(0.24, 0.46, 0.22)))
+		b.add_theme_stylebox_override("focus", _btn_box(Color(0.34, 0.62, 0.30)))
+
+
 # ------------------------------------------------------------------ slider
  
 func _style_sliders() -> void:
@@ -126,8 +180,8 @@ func _add_value_label(s: HSlider) -> void:
 	l.offset_bottom = 16.0
 	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	l.add_theme_font_size_override("font_size", 20)
-	l.add_theme_color_override("font_color", Color.WHITE)
-	l.add_theme_color_override("font_outline_color", Color(0.02, 0.06, 0.04))
+	l.add_theme_color_override("font_color", text_color)
+	l.add_theme_color_override("font_outline_color", Color(0.14, 0.07, 0.03))
 	l.add_theme_constant_override("outline_size", 6)
 	var ref := find_child("MasterLabel", true, false) as Control
 	if ref:
@@ -162,12 +216,12 @@ func _circle_texture(highlight: bool) -> ImageTexture:
 	var img := Image.create(d, d, false, Image.FORMAT_RGBA8)
 	var c := Vector2(d, d) * 0.5 - Vector2(0.5, 0.5)
 	var r := d * 0.5 - 1.0
-	var ring := accent_color.lightened(0.2) if highlight else accent_color
+	var ring := Color(0.16, 0.08, 0.04)
 	for y in d:
 		for x in d:
 			var dist := Vector2(x, y).distance_to(c)
 			var a := clampf(r - dist + 0.5, 0.0, 1.0)
-			var col := ring if dist > r - 5.0 else Color.WHITE
+			var col := ring if dist > r - 4.0 else (Color(1.0, 0.88, 0.55) if highlight else Color(0.95, 0.80, 0.45))
 			img.set_pixel(x, y, Color(col.r, col.g, col.b, a))
 	return ImageTexture.create_from_image(img)
  
@@ -191,14 +245,14 @@ func _toggle_texture(is_on: bool) -> ImageTexture:
 	var img := Image.create(w, h, false, Image.FORMAT_RGBA8)
 	var r := h * 0.5
 	var knob_x := (w - r) if is_on else r
-	var base := accent_color if is_on else Color(0.2, 0.25, 0.22)
+	var base := accent_color if is_on else Color(0.22, 0.12, 0.06)
 	for y in h:
 		for x in w:
 			var p := Vector2(x + 0.5, y + 0.5)
 			var cx := clampf(p.x, r, w - r)
 			var a := clampf(r - p.distance_to(Vector2(cx, r)) + 0.5, 0.0, 1.0)
 			var ka := clampf(r - 4.0 - p.distance_to(Vector2(knob_x, r)) + 0.5, 0.0, 1.0)
-			var col := base.lerp(Color.WHITE, ka)
+			var col := base.lerp(Color(0.97, 0.88, 0.62), ka)
 			img.set_pixel(x, y, Color(col.r, col.g, col.b, a))
 	return ImageTexture.create_from_image(img)
  
@@ -208,7 +262,7 @@ func _toggle_texture(is_on: bool) -> ImageTexture:
 func _add_underline(lbl: Label) -> void:
 	var w := lbl.get_minimum_size().x
 	var bar := ColorRect.new()
-	bar.color = accent_color
+	bar.color = heading_color
 	bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bar.anchor_top = 1.0
 	bar.anchor_bottom = 1.0

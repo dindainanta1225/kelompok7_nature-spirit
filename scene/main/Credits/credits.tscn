@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1b1xl5ymyyvt" path="res://scene/main/credits/credits.gd" id="1_rvhtk"]
 [ext_resource type="FontFile" uid="uid://c4fjspbbb70bf" path="res://assets/fonts/Matcha Mint.ttf" id="2_o2f0w"]
 [ext_resource type="AudioStream" uid="uid://bluaokvs6mhp5" path="res://audio/music/farran_ez-soft-indie-guitar-sample-456142.mp3" id="3_rgyns"]
-[ext_resource type="AudioStream" uid="uid://dek6x1acg51p8" path="res://audio/sfx/freesound_community-button-pressed-38129.mp3" id="4_kkuax"]
+[ext_resource type="AudioStream" uid="uid://dek6x1acg51p8" path="res://audio/music/sfx/freesound_community-button-pressed-38129.mp3" id="4_kkuax"]
 [ext_resource type="Script" uid="uid://dqh10ncic3wvp" path="res://scene/main/credits/menu_fx.gd" id="5_0mucg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0muab"]
